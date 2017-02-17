@@ -1,0 +1,93 @@
+---
+title: "Quadratic Equations"
+author: "Brooke Wills"
+date: "February 14, 2017"
+output: html_document
+---
+
+Below I define the quadratic equation in R using the funciton quad().
+
+```{r }
+quad <- function(x,a=0,b=0,c=0) {
+  a*x^2+b*x+c
+}
+x <- seq(from=-10, to=10, by=.1)
+
+a <- quad(x,a=3)
+a2 <- quad(x,a=2)
+a3 <- quad(x,a=1)
+a4 <- quad(x,a=-1)
+a5 <- quad(x,a=-2)
+
+b <- quad(x,b=3)
+b2 <- quad(x,b=2)
+b3 <- quad(x,b=1)
+b4 <- quad(x,b=-1)
+b5 <- quad(x,b=-2)
+
+c <- quad(x,c=3)
+c2 <- quad(x,c=2)
+c3 <- quad(x,c=1)
+c4 <- quad(x,c=-1)
+c5 <- quad(x,c=-2)
+
+ab <- quad(x,a=3,b=1)
+ab2 <- quad(x,a=2,b=-3)
+ab3 <- quad(x,a=1,b=5)
+ab4 <- quad(x,a=-1,b=2)
+ab5 <- quad(x,a=-2,b=-5)
+
+ac <- quad(x,a=3,c=1)
+ac2 <- quad(x,a=2,c=-3)
+ac3 <- quad(x,a=1,c=5)
+ac4 <- quad(x,a=-1,c=2)
+ac5 <- quad(x,a=-2,c=-5)
+
+bc <- quad(x,b=3,c=1)
+bc2 <- quad(x,b=2,c=-3)
+bc3 <- quad(x,b=1,c=5)
+bc4 <- quad(x,b=-1,c=2)
+bc5 <- quad(x,b=-2,c=-5)
+```
+
+The plots below each show the effects of different values for the constants in the quadratic formula Ax^2+Bx+C and the other constants set to zero. When A is the only non zero number we get a curve with varying widths. When B is the only constant we see only lines at different angels and when C is the only constant we see horizontal lines paralell to the x axis. 
+
+```{r, echo=FALSE}
+
+plot(x,a,"l", main ="Different Values of A")
+lines(x,a2)
+lines(x,a3)
+lines(x,a4)
+lines(x,a5)
+
+plot(x,b,"l", main ="Different Values of B")
+lines(x,b2)
+lines(x,b3)
+lines(x,b4)
+lines(x,b5)
+
+plot(x,c,"l", main ="Different Values of C")
+lines(x,c2)
+lines(x,c3)
+lines(x,c4)
+lines(x,c5)
+
+plot(x,ab,"l", main ="Different Values of A and B")
+lines(x,ab2)
+lines(x,ab3)
+lines(x,ab4)
+lines(x,ab5)
+
+plot(x,ac,"l", main ="Different Values of A and C")
+lines(x,ac2)
+lines(x,ac3)
+lines(x,ac4)
+lines(x,ac5)
+
+plot(x,bc,"l", main ="Different Values of B and C")
+lines(x,bc2)
+lines(x,bc3)
+lines(x,bc4)
+lines(x,bc5)
+```
+
