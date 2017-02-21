@@ -1,0 +1,17 @@
+{
+    "contents" : "name: \"my-website\"\nnavbar:\n  title: \"My Website\"\n  left:\n    - text: \"Home\"\n      href: index.html\n    - text: \"About\"\n      href: about.html\n    - text: \"Homework 1\"\n      href: quadratic_equations.html",
+    "created" : 1487694502632.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2850402217",
+    "id" : "5F371528",
+    "lastKnownWriteTime" : 1487695826,
+    "path" : "~/Desktop/BrookeWills/AU/Senior/Comp and Modeling/Stats370 Website/_site.yml",
+    "project_path" : "_site.yml",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

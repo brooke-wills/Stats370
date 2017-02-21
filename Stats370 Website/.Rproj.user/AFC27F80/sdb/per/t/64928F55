@@ -1,0 +1,17 @@
+{
+    "contents" : "---\n  title: \"About This Website\"\n---\n  \n  More about this website.",
+    "created" : 1487694598273.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1396059102",
+    "id" : "64928F55",
+    "lastKnownWriteTime" : 1487695854,
+    "path" : "~/Desktop/BrookeWills/AU/Senior/Comp and Modeling/Stats370 Website/about.Rmd",
+    "project_path" : "about.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "---\n  title: \"Homework 1\"\n---\n  \n---\ntitle: \"Quadratic Equations\"\nauthor: \"Brooke Wills\"\ndate: \"February 14, 2017\"\noutput: html_document\n---\n\nBelow I define the quadratic equation in R using the funciton quad().\n\n```{r }\nquad <- function(x,a=0,b=0,c=0) {\n  a*x^2+b*x+c\n}\nx <- seq(from=-10, to=10, by=.1)\n\na <- quad(x,a=3)\na2 <- quad(x,a=2)\na3 <- quad(x,a=1)\na4 <- quad(x,a=-1)\na5 <- quad(x,a=-2)\n\nb <- quad(x,b=3)\nb2 <- quad(x,b=2)\nb3 <- quad(x,b=1)\nb4 <- quad(x,b=-1)\nb5 <- quad(x,b=-2)\n\nc <- quad(x,c=3)\nc2 <- quad(x,c=2)\nc3 <- quad(x,c=1)\nc4 <- quad(x,c=-1)\nc5 <- quad(x,c=-2)\n\nab <- quad(x,a=3,b=1)\nab2 <- quad(x,a=2,b=-3)\nab3 <- quad(x,a=1,b=5)\nab4 <- quad(x,a=-1,b=2)\nab5 <- quad(x,a=-2,b=-5)\n\nac <- quad(x,a=3,c=1)\nac2 <- quad(x,a=2,c=-3)\nac3 <- quad(x,a=1,c=5)\nac4 <- quad(x,a=-1,c=2)\nac5 <- quad(x,a=-2,c=-5)\n\nbc <- quad(x,b=3,c=1)\nbc2 <- quad(x,b=2,c=-3)\nbc3 <- quad(x,b=1,c=5)\nbc4 <- quad(x,b=-1,c=2)\nbc5 <- quad(x,b=-2,c=-5)\n```\n\nThe plots below each show the effects of different values for the constants in the quadratic formula Ax^2+Bx+C and the other constants set to zero. When A is the only non zero number we get a curve with varying widths. When B is the only constant we see only lines at different angels and when C is the only constant we see horizontal lines paralell to the x axis. \n\n```{r, echo=FALSE}\n\nplot(x,a,\"l\", main =\"Different Values of A\")\nlines(x,a2)\nlines(x,a3)\nlines(x,a4)\nlines(x,a5)\n\nplot(x,b,\"l\", main =\"Different Values of B\")\nlines(x,b2)\nlines(x,b3)\nlines(x,b4)\nlines(x,b5)\n\nplot(x,c,\"l\", main =\"Different Values of C\")\nlines(x,c2)\nlines(x,c3)\nlines(x,c4)\nlines(x,c5)\n\nplot(x,ab,\"l\", main =\"Different Values of A and B\")\nlines(x,ab2)\nlines(x,ab3)\nlines(x,ab4)\nlines(x,ab5)\n\nplot(x,ac,\"l\", main =\"Different Values of A and C\")\nlines(x,ac2)\nlines(x,ac3)\nlines(x,ac4)\nlines(x,ac5)\n\nplot(x,bc,\"l\", main =\"Different Values of B and C\")\nlines(x,bc2)\nlines(x,bc3)\nlines(x,bc4)\nlines(x,bc5)\n```\n\n",
+    "created" : 1487695743931.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "108908063",
+    "id" : "66374C0C",
+    "lastKnownWriteTime" : 1487695904,
+    "path" : "~/Desktop/BrookeWills/AU/Senior/Comp and Modeling/Stats370 Website/Quadratic_Equations.Rmd",
+    "project_path" : "Quadratic_Equations.Rmd",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
