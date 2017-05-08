@@ -1,0 +1,13 @@
+---
+title: "Homework 2"
+author: "Brooke Wills"
+output: html_document
+---
+```{r }
+library(data.table)
+
+PropertyTax <- read.csv("RealPropertyTaxes.csv")
+
+head(PropertyTax)
+```
+
