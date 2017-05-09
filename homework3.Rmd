@@ -1,0 +1,44 @@
+---
+title: "Homework 3"
+author: "Brooke Wills"
+output: html_document
+---
+These will implement the Normal distribution with the important difference that it will be impossible for the random variable to be a negative number—when a negative number appears, new random numbers are chosen, until a positive one appears.
+
+## Creating rmytnorm()
+```{r, results='hide', echo=FALSE}
+  rmytnorm <- function(x,mean,sd){
+    library(msm)
+    n = rtnorm(x,mean,sd)
+    return(n)
+  }
+```
+
+```{r}
+y <- rmytnorm(1000,10,2)
+
+head(y)
+
+hist(y)
+```
+
+## Creating dmytnorm()
+
+
+```{r, results='hide', echo=FALSE}
+  dmytnorm <- function(x,mean,sd){
+    library(msm)
+    n = dtnorm(x,mean,sd)
+    return(n)
+  }
+?dtnorm
+```
+
+```{r }
+x <- dmytnorm(-10:10,5,2)
+
+head(x)
+
+plot(x)
+```
+
