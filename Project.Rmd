@@ -1,0 +1,323 @@
+---
+title: "FBI Crime Reorts in the US"
+author: "Brooke Wills"
+output: html_document
+---
+These maps show how crime has affected the continental United States. Each map looks at a different crime that the FBI has investigated. 
+
+##Violent Crime 
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Violent Crime", violent.crime
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+vc <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~violent.crime, text = ~hover, locations = ~Code,
+    color = ~violent.crime, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Violent Crimes by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+vc
+summary(dt$violent.crime)
+hist(dt$violent.crime)
+```
+
+##Murders
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Murder", murder
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+m <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~murder, text = ~hover, locations = ~Code,
+    color = ~murder, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Murders by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+m
+summary(dt$murder)
+hist(dt$murder)
+```
+
+##Reported Rapes
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "# of Rapes", rape
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+r <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~rape, text = ~hover, locations = ~Code,
+    color = ~rape, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Rape by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+r
+summary(dt$rape)
+hist(dt$rape)
+```
+
+##Robberies 
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Robbery", robbery
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+ro <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~robbery, text = ~hover, locations = ~Code,
+    color = ~robbery, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Robbery by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+ro
+summary(dt$robbery)
+hist(dt$robbery)
+```
+
+##Aggravated Assault
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Aggravated Assault", aggravated.assault
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+a <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~aggravated.assault, text = ~hover, locations = ~Code,
+    color = ~aggravated.assault, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Aggravated Assault by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+a
+summary(dt$aggravated.assault)
+hist(dt$aggravated.assault)
+```
+
+##Property Crime
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Property Crime", property.crime
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+p <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~property.crime, text = ~hover, locations = ~Code,
+    color = ~property.crime, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Property Crime by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+p
+summary(dt$property.crime)
+hist(dt$property.crime)
+```
+
+##Burglary
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Burglary", burglary
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+b <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~burglary, text = ~hover, locations = ~Code,
+    color = ~burglary, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Burglary by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+b
+summary(dt$burglary)
+hist(dt$burglary)
+```
+
+##Theft
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Theft", theft
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+t <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~theft, text = ~hover, locations = ~Code,
+    color = ~theft, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Theft by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+t
+summary(dt$theft)
+hist(dt$theft)
+```
+
+##Motor Vehicle Theft 
+```{r , echo=FALSE, include=FALSE, cache=FALSE}
+library(plotly)
+library(ggplot2)
+dt <- read.csv(file = "FBIdata.csv", header=TRUE)
+dt$hover <- with(dt, paste(State, '<br>', "Population", Population,'<br>', 
+                           "Motor Vehicle Theft", motor.vehicle.theft
+                           ))
+l <- list(color = toRGB("white"), width = 2)
+g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  showlakes = TRUE,
+  lakecolor = toRGB('white')
+)
+
+mv <- plot_geo(dt, locationmode = 'USA-states') %>%
+  add_trace(
+    z = ~motor.vehicle.theft, text = ~hover, locations = ~Code,
+    color = ~motor.vehicle.theft, colors = 'Purples'
+  ) %>%
+  colorbar(title = " ") %>%
+  layout(
+    title = '2013 US FBI Crime Reports of Motor Vehicle Theft by State)',
+    geo = g
+  )
+
+```
+
+```{r, echo=FALSE}
+mv
+summary(dt$motor.vehicle.theft)
+hist(dt$motor.vehicle.theft)
+```
+
+
